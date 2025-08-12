@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AniVault</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+  <style>
+    /* Global styles */
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #101010;
+      color: white;
+    }
+
+    /* Header styles */
+    header {
+  background-color: #130f40;
+  background-image: linear-gradient(315deg, #130f40 0%, #000000 74%);
+  padding: 20px 0; /* Keep padding as is for a balanced design */
+  text-align: center;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); /* Maintain subtle, stronger shadow */
+  border-bottom: 2px solid rgba(255, 255, 255, 0.2); /* Light border at the bottom for separation */
+  display: flex;
+  align-items: center; /* Vertically align the logo and title */
+  justify-content: center; /* Center the content horizontally */
+  gap: 20px; /* Space between the logo and the title */
+}
+
+header h1 {
+  margin: 0;
+  font-size: 3rem;
+  color: #FF5733;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  letter-spacing: 1px;
+  
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+header img {
+  max-width: 80px; /* Adjust size to better align with the title */
+  height: auto;
+  border-radius: 50%; /* Keeps the circular style */
+}
+
+
+    .header-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 20px;
+    }
+
+    nav {
+      flex-grow: 1;
+      display: flex;
+      justify-content: flex-start;
+    }
+
+    nav a {
+      color: #f1f1f1;
+      font-size: 1rem;
+      padding: 10px 20px;
+      text-decoration: none;
+      margin: 0 15px;
+      border-radius: 5px;
+      transition: background-color 0.3s;
+      display: flex;
+      align-items: center;
+    }
+
+    nav a i {
+      margin-right: 8px;
+    }
+
+    nav a:hover {
+      background-color: #444;
+    }
+
+    .search-filter-container {
+      display: flex;
+      align-items: center;
+    }
+
+    .search-bar {
+      margin-right: 20px;
+      display: flex;
+    }
+
+    .search-bar input {
+      padding: 12px;
+      width: 250px;
+      border-radius: 25px;
+      border: none;
+      background-color: #333;
+      color: white;
+      font-size: 16px;
+    }
+
+    .filters select {
+      padding: 12px;
+      background-color: #444;
+      color: white;
+      font-size: 16px;
+      border-radius: 5px;
+      border: none;
+      margin: 0 10px;
+    }
+
+    /* Banner styles */
+   
+    /* Anime grid */
+    .anime-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 20px;
+      padding: 20px;
+      justify-items: center;
+    }
+
+    .anime-card {
+      background-color: #2c2c2c;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      width: 250px;
+    }
+
+    .anime-card img {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+    }
+
+    .anime-card h3 {
+      padding: 10px;
+      margin: 0;
+      text-align: center;
+      background-color: #444;
+      color: #fff;
+    }
+
+    .anime-card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+    }
+
+    /* Pagination */
+    .pagination {
+      text-align: center;
+      padding: 20px;
+    }
+
+    .pagination button {
+      padding: 12px 20px;
+      background-color: #444;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      margin: 0 5px;
+      font-size: 1rem;
+      transition: background-color 0.3s;
+    }
+
+    .pagination button:hover {
+      background-color: #666;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <img src="/static/av.jpg" alt="AniVault Logo"/>
+  <h1>AniVault</h1>
+</header>
+
+<div class="header-content">
+  <nav>
+    <a href="/"><i class="fas fa-home"></i>Home</a>
+    <a href="/genres"><i class="fas fa-film"></i>Recommendation</a>
+    <a href="/animelist"><i class="fas fa-list-ul"></i>Anime List</a>
+  </nav>
+  <div class="search-filter-container">
+    <div class="search-bar">
+      <input type="text" id="searchInput" placeholder="Search for anime..." oninput="filterAnime()">
+    </div>
+    <div class="filters">
+      <select id="filterSelect" onchange="filterAnime()">
+        <option value="all">All Genres</option>
+        <option value="action">Action</option>
+        <option value="adventure">Adventure</option>
+        <option value="romance">Romance</option>
+        <option value="comedy">Comedy</option>
+      </select>
+      <select id="sortSelect" onchange="sortAnime()">
+        <option value="default">Sort by Title</option>
+        <option value="asc">A - Z</option>
+        <option value="desc">Z - A</option>
+      </select>
+    </div>
+   
+    
+  </div>
+</div>
+
+
+<div class="anime-grid" id="animeGrid"></div>
+<div class="pagination" id="pagination"></div>
+
+<script>
+  // Banner auto-scroll logic
+  // Auto-scroll every 5 seconds
+  const animeData = [
+
+  { title: "Heroic Bloodshed", genre: "action", img: "/static/bc.jpg" },
+  { title: "Spirited Away", genre: "adventure", img: "/static/sa.jpg" },
+  { title: "Military Action", genre: "action", img: "/static/mat.jpg" },
+  { title: "Castle in the Sky", genre: "romance", img: "/static/cs.jpg" },
+  { title: "Espionage", genre: "action", img: "/static/es.jpg" },
+  { title: "Wuxia Action", genre: "action", img: "/static/wa.jpg" },
+  { title: "My Neighbor Totoro", genre: "comedy", img: "/static/mnt.jpg" },
+  { title: "Princess Mononoke", genre: "adventure", img: "/static/pm.jpg" },
+  { title: "Whisper of the Heart", genre: "romance", img: "/static/wh.jpg" },
+
+  { title: "Attack on Titan", genre: "action", img: "/static/at.jpg" },
+  { title: "One Piece", genre: "adventure", img: "/static/op.jpg" },
+  { title: "Naruto", genre: "action", img: "/static/na.jpg" },
+  { title: "Your Name", genre: "romance", img: "/static/yn.jpg" },
+  { title: "Demon Slayer", genre: "action", img: "/static/ds.jpg" },
+  { title: "My Hero Academia", genre: "action", img: "/static/ma.jpg" },
+  { title: "Kaguya-sama", genre: "comedy", img: "/static/ks.jpg" },
+  { title: "Re:Zero", genre: "adventure", img: "/static/rz.jpg" },
+  { title: "The Garden of Words", genre: "romance", img: "/static/gw.jpg" }
+];
+
+let currentPage = 1;
+const itemsPerPage = 15;
+
+// Function to generate anime cards
+function generateCards(data) {
+  const animeGrid = document.getElementById('animeGrid');
+  animeGrid.innerHTML = '';
+  data.forEach(anime => {
+    const card = document.createElement('div');
+    card.classList.add('anime-card');
+    card.innerHTML = `
+      <img src="${anime.img}" alt="${anime.title}">
+      <h3>${anime.title}</h3>
+    `;
+    animeGrid.appendChild(card);
+  });
+}
+
+// Function to handle search filter
+function filterAnime() {
+  const searchInput = document.getElementById('searchInput').value.toLowerCase();
+  const filterSelect = document.getElementById('filterSelect').value;
+  const filteredData = animeData.filter(anime => {
+    const titleMatch = anime.title.toLowerCase().includes(searchInput);
+    const genreMatch = filterSelect === 'all' || anime.genre === filterSelect;
+    return titleMatch && genreMatch;
+  });
+  paginate(filteredData);
+}
+
+// Function to handle sorting
+function sortAnime() {
+  const sortSelect = document.getElementById('sortSelect').value;
+  let sortedData = [...animeData];
+  if (sortSelect === 'asc') {
+    sortedData.sort((a, b) => a.title.localeCompare(b.title));
+  } else if (sortSelect === 'desc') {
+    sortedData.sort((a, b) => b.title.localeCompare(a.title));
+  }
+  paginate(sortedData);
+}
+
+// Pagination logic
+function paginate(data) {
+  const startIndex = (currentPage - 1) * itemsPerPage;
+  const paginatedData = data.slice(startIndex, startIndex + itemsPerPage);
+  generateCards(paginatedData);
+
+  const pageCount = Math.ceil(data.length / itemsPerPage);
+  generatePagination(pageCount);
+}
+
+// Function to generate pagination controls
+function generatePagination(pageCount) {
+  const pagination = document.getElementById('pagination');
+  pagination.innerHTML = '';
+
+  for (let i = 1; i <= pageCount; i++) {
+    const button = document.createElement('button');
+    button.textContent = i;
+    button.onclick = () => {
+      currentPage = i;
+      paginate(animeData);
+    };
+    pagination.appendChild(button);
+  }
+}
+
+// Initialize the portal with data
+paginate(animeData);
+</script>
+
+</body>
+</html>
