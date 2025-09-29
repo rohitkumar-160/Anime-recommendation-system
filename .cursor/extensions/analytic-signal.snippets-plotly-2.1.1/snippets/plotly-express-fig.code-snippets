@@ -1,0 +1,373 @@
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Analytic Signal Limited. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+ {
+    //
+    // plotly.express figures:
+    //
+    "scatter": {
+        "prefix": "px-fig-scatter",
+        "description": "Insert plotly.express scatter figure",
+        "body": [
+            "${1:fig} = px.scatter(data_frame=${2:$TM_SELECTED_TEXT}, x='${3:x}', y='${4:y}', color='${5:color}', trendline='${6|ols,lowess,rolling,expanding,ewm|}')",
+            "$1.show()",
+            "$0"
+        ]
+    },
+    "scatter_3d": {
+        "prefix": "px-fig-scatter_3d",
+        "description": "Insert plotly.express scatter_3d figure",
+        "body": [
+            "${1:fig} = px.scatter_3d(data_frame=${2:$TM_SELECTED_TEXT}, x='${3:x}', y='${4:y}', z='${5:z}', color='${6:color}')",
+            "$1.show()",
+            "$0"
+        ]
+    },
+    "scatter_polar": {
+        "prefix": "px-fig-scatter_polar",
+        "description": "Insert plotly.express scatter_polar figure",
+        "body": [
+            "${1:fig} = px.scatter_polar(data_frame=${2:$TM_SELECTED_TEXT}, r='${3:r}', theta='${4:theta}', color='${5:color}')",
+            "$1.show()",
+            "$0"
+        ]
+    },
+    "scatter_ternary": {
+        "prefix": "px-fig-scatter_ternary",
+        "description": "Insert plotly.express scatter_ternary figure",
+        "body": [
+            "${1:fig} = px.scatter_ternary(data_frame=${2:$TM_SELECTED_TEXT}, a='${3:a}', b='${4:b}', c='${5:c}', color='${6:color}')",
+            "$1.show()",
+            "$0"
+        ]
+    },
+    "scatter_mapbox": {
+        "prefix": "px-fig-scatter_mapbox",
+        "description": "Insert plotly.express scatter_mapbox figure",
+        "body": [
+            "${1:fig} = px.scatter_mapbox(data_frame=${2:$TM_SELECTED_TEXT}, lat='${3:lat}', lon='${4:lon}', text='${5:text}', color='${6:color}', mapbox_style='${7|basic,streets,outdoors,light,dark,satellite,satellite-streets,open-street-map,white-bg,carto-positron,carto-darkmatter,stamen-terrain,stamen-toner,stamen_watercolor|}')",
+            "$1.show()",
+            "$0"
+        ]
+    },
+    "scatter_map": {
+        "prefix": "px-fig-scatter_map",
+        "description": "Insert plotly.express scatter_map figure",
+        "body": [
+            "${1:fig} = px.scatter_map(data_frame=${2:$TM_SELECTED_TEXT}, lat='${3:lat}', lon='${4:lon}', text='${5:text}', color='${6:color}', map_style='${7|basic,carto-darkmatter,carto-darkmatter-nolabels,carto-positron,carto-positron-nolabels,carto-voyager,carto-voyager-nolabels,dark,light,open-street-map,outdoors,satellite,satellite-streets,streets,white-bg|}')",
+            "$1.show()",
+            "$0"
+        ]
+    },
+    "scatter_geo": {
+        "prefix": "px-fig-scatter_geo",
+        "description": "Insert plotly.express scatter_geo figure",
+        "body": [
+            "${1:fig} = px.scatter_geo(data_frame=${2:$TM_SELECTED_TEXT}, lat='${3:lat}', lon='${4:lon}', color='${5:color}', scope='${6|world,usa,europe,asia,africa,north america,south america|}')",
+            "$1.show()",
+            "$0"
+        ]
+    },
+    "line": {
+        "prefix": "px-fig-line",
+        "description": "Insert plotly.express line figure",
+        "body": [
+            "${1:fig} = px.line(data_frame=${2:$TM_SELECTED_TEXT}, x='${3:x}', y='${4:y}', color='${5:color}')",
+            "$1.show()",
+            "$0"
+        ]
+    },
+    "line_3d": {
+        "prefix": "px-fig-line_3d",
+        "description": "Insert plotly.express line_3d figure",
+        "body": [
+            "${1:fig} = px.line_3d(data_frame=${2:$TM_SELECTED_TEXT}, x='${3:x}', y='${4:y}', z='${5:z}')",
+            "$1.show()",
+            "$0"
+        ]
+    },
+    "line_polar": {
+        "prefix": "px-fig-line_polar",
+        "description": "Insert plotly.express line_polar figure",
+        "body": [
+            "${1:fig} = px.line_polar(data_frame=${2:$TM_SELECTED_TEXT}, r='${3:r}', theta='${4:theta}', color='${5:color}', line_close=${6|True,False|})",
+            "$1.show()",
+            "$0"
+        ]
+    },
+    "line_ternary": {
+        "prefix": "px-fig-line_ternary",
+        "description": "Insert plotly.express line_ternary figure",
+        "body": [
+            "${1:fig} = px.line_ternary(data_frame=${2:$TM_SELECTED_TEXT}, a='${3:a}', b='${4:b}', c='${5:c}', color='${6:color}')",
+            "$1.show()",
+            "$0"
+        ]
+    }, 
+    "line_mapbox": {
+        "prefix": "px-fig-line_mapbox",
+        "description": "Insert plotly.express line_mapbox figure",
+        "body": [
+            "${1:fig} = px.line_mapbox(data_frame=${2:$TM_SELECTED_TEXT}, lat='${3:lat}', lon='${4:lon}', line_group='${5:line_group}', mapbox_style='${6|basic,streets,outdoors,light,dark,satellite,satellite-streets,open-street-map,white-bg,carto-positron,carto-darkmatter,stamen-terrain,stamen-toner,stamen_watercolor|}')",
+            "$1.show()",
+            "$0"
+        ]
+    },
+    "line_map": {
+        "prefix": "px-fig-line_map",
+        "description": "Insert plotly.express line_map figure",
+        "body": [
+            "${1:fig} = px.line_map(data_frame=${2:$TM_SELECTED_TEXT}, lat='${3:lat}', lon='${4:lon}', line_group='${5:line_group}', map_style='${6|basic,carto-darkmatter,carto-darkmatter-nolabels,carto-positron,carto-positron-nolabels,carto-voyager,carto-voyager-nolabels,dark,light,open-street-map,outdoors,satellite,satellite-streets,streets,white-bg|}')",
+            "$1.show()",
+            "$0"
+        ]
+    },
+    "line_geo": {
+        "prefix": "px-fig-line_geo",
+        "description": "Insert plotly.express line_geo figure",
+        "body": [
+            "${1:fig} = px.line_geo(data_frame=${2:$TM_SELECTED_TEXT}, lat='${3:lat}', lon='${4:lon}', line_group='${5:line_group}', scope='${6|world,usa,europe,asia,africa,north america,south america|}')",
+            "$1.show()",
+            "$0"
+        ]
+    },    
+    "area": {
+        "prefix": "px-fig-area",
+        "description": "Insert plotly.express area figure",
+        "body": [
+            "${1:fig} = px.area(data_frame=${2:$TM_SELECTED_TEXT}, x='${3:x}', y='${4:y}', color='${5:color}')",
+            "$1.show()",
+            "$0"
+        ]
+    },
+    "bar": {
+        "prefix": "px-fig-bar",
+        "description": "Insert plotly.express bar figure",
+        "body": [
+            "${1:fig} = px.bar(data_frame=${2:$TM_SELECTED_TEXT}, x='${3:x}', y='${4:y}')",
+            "$1.show()",
+            "$0"
+        ]
+    },
+    "timeline": {
+        "prefix": "px-fig-timeline",
+        "description": "Insert plotly.express timeline figure",
+        "body": [
+            "${1:fig} = px.timeline(data_frame=${2:$TM_SELECTED_TEXT}, x_start='${3:x_start}', x_end='${4:x_end}', y='${5:y}', color='${6:color}')",
+            "$1.show()",
+            "$0"
+        ]
+    },
+    "bar_polar": {
+        "prefix": "px-fig-bar_polar",
+        "description": "Insert plotly.express bar_polar figure",
+        "body": [
+            "${1:fig} = px.bar_polar(data_frame=${2:$TM_SELECTED_TEXT}, r='${3:r}', theta='${4:theta}', color='${5:color}')",
+            "$1.show()",
+            "$0"
+        ]
+    },
+    "violin": {
+        "prefix": "px-fig-violin",
+        "description": "Insert plotly.express violin figure",
+        "body": [
+            "${1:fig} = px.violin(data_frame=${2:$TM_SELECTED_TEXT}, x='${3:x}', y='${4:y}', color='${5:color}')",
+            "$1.show()",
+            "$0"
+        ]
+    },
+    "box": {
+        "prefix": "px-fig-box",
+        "description": "Insert plotly.express box figure",
+        "body": [
+            "${1:fig} = px.box(data_frame=${2:$TM_SELECTED_TEXT}, x='${3:x}', y='${4:y}', color='${5:color}')",
+            "$1.show()",
+            "$0"
+        ]
+    },
+    "ecdf": {
+        "prefix": "px-fig-ecdf",
+        "description": "Insert plotly.express ecdf figure",
+        "body": [
+            "${1:fig} = px.ecdf(data_frame=${2:$TM_SELECTED_TEXT}, x='${3:x}', color='${4:color}')",
+            "$1.show()",
+            "$0"
+        ]
+    },
+    "strip": {
+        "prefix": "px-fig-strip",
+        "description": "Insert plotly.express strip figure",
+        "body": [
+            "${1:fig} = px.strip(data_frame=${2:$TM_SELECTED_TEXT}, x='${3:x}', y='${4:y}', color='${5:color}')",
+            "$1.show()",
+            "$0"
+        ]
+    },
+    "histogram": {
+        "prefix": "px-fig-histogram",
+        "description": "Insert plotly.express histogram figure",
+        "body": [
+            "${1:fig} = px.histogram(data_frame=${2:$TM_SELECTED_TEXT}, x='${3:x}', color='${4:color}')",
+            "$1.show()",
+            "$0"
+        ]
+    },
+    "pie": {
+        "prefix": "px-fig-pie",
+        "description": "Insert plotly.express pie figure",
+        "body": [
+            "${1:fig} = px.pie(data_frame=${2:$TM_SELECTED_TEXT}, names='${3:names}', values='${4:values}')",
+            "$1.show()",
+            "$0"
+        ]
+    },
+    "treemap": {
+        "prefix": "px-fig-treemap",
+        "description": "Insert plotly.express treemap figure",
+        "body": [
+            "${1:fig} = px.treemap(data_frame=${2:$TM_SELECTED_TEXT}, names='${3:names}', values='${4:values}', path=['${5:path1}','${6:path2}','${7:path3}'])",
+            "$1.show()",
+            "$0"
+        ]
+    },
+    "sunburst": {
+        "prefix": "px-fig-sunburst",
+        "description": "Insert plotly.express sunburst figure",
+        "body": [
+            "${1:fig} = px.sunburst(data_frame=${2:$TM_SELECTED_TEXT}, names='${3:names}', values='${4:values}', path=['${5:path1}','${6:path2}','${7:path3}'])",
+            "$1.show()",
+            "$0"
+        ]
+    },
+    "icicle": {
+        "prefix": "px-fig-icicle",
+        "description": "Insert plotly.express icicle figure",
+        "body": [
+            "${1:fig} = px.icicle(data_frame=${2:$TM_SELECTED_TEXT}, names='${3:names}', values='${4:values}', path=['${5:path1}','${6:path2}','${7:path3}'])",
+            "$1.show()",
+            "$0"
+        ]
+    },
+    "funnel": {
+        "prefix": "px-fig-funnel",
+        "description": "Insert plotly.express funnel figure",
+        "body": [
+            "${1:fig} = px.funnel(data_frame=${2:$TM_SELECTED_TEXT}, x='${3:x}', y='${4:y}')",
+            "$1.show()",
+            "$0"
+        ]
+    },
+    "funnel_area": {
+        "prefix": "px-fig-funnel_area",
+        "description": "Insert plotly.express funnel_area figure",
+        "body": [
+            "${1:fig} = px.funnel_area(data_frame=${2:$TM_SELECTED_TEXT}, names='${3:names},' values='${4:values}')",
+            "$1.show()",
+            "$0"
+        ]
+    },
+    "scatter_matrix": {
+        "prefix": "px-fig-scatter_matrix",
+        "description": "Insert plotly.express scatter_matrix figure",
+        "body": [
+            "${1:fig} = px.scatter_matrix(data_frame=${2:$TM_SELECTED_TEXT}, dimensions=['${3:dim1}','${4:dim2}','${5:dim3}','${6:dim4}'], color='${7:color}')",
+            "$1.show()",
+            "$0"
+        ]
+    },
+    "parallel_coordinates": {
+        "prefix": "px-fig-parallel_coordinates",
+        "description": "Insert plotly.express parallel_coordinates figure",
+        "body": [
+            "${1:fig} = px.parallel_coordinates(data_frame=${2:$TM_SELECTED_TEXT}, dimensions=['${3:dim1}','${4:dim2}','${5:dim3}','${6:dim4}'], color='${7:color}')",
+            "$1.show()",
+            "$0"
+        ]
+    },
+    "parallel_categories": {
+        "prefix": "px-fig-parallel_categories",
+        "description": "Insert plotly.express parallel_categories figure",
+        "body": [
+            "${1:fig} = px.parallel_categories(data_frame=${2:$TM_SELECTED_TEXT}, dimensions=['${3:dim1}','${4:dim2}','${5:dim3}','${6:dim4}'], color='${7:color}')",
+            "$1.show()",
+            "$0"
+        ]
+    },
+    "choropleth": {
+        "prefix": "px-fig-choropleth",
+        "description": "Insert plotly.express choropleth figure",
+        "body": [
+            "${1:fig} = px.choropleth(data_frame=${2:$TM_SELECTED_TEXT}, geojson=${3:geojson}, locations='${4:locations}', color='${5:color}', featureidkey='${6:featurekeyid}')",
+            "$1.show()",
+            "$0"
+        ]
+    },
+    "choropleth_mapbox": {
+        "prefix": "px-fig-choropleth_mapbox",
+        "description": "Insert plotly.express choropleth_mapbox figure",
+        "body": [
+            "${1:fig} = px.choropleth_mapbox(data_frame=${2:$TM_SELECTED_TEXT}, geojson=${3:geojson}, locations='${4:locations}', color='${5:color}', featureidkey='${6:featurekeyid}', mapbox_style='${7|basic,streets,outdoors,light,dark,satellite,satellite-streets,open-street-map,white-bg,carto-positron,carto-darkmatter,stamen-terrain,stamen-toner,stamen_watercolor|}')",
+            "$1.show()",
+            "$0"
+        ]
+    },
+    "choropleth_map": {
+        "prefix": "px-fig-choropleth_map",
+        "description": "Insert plotly.express choropleth_map figure",
+        "body": [
+            "${1:fig} = px.choropleth_map(data_frame=${2:$TM_SELECTED_TEXT}, geojson=${3:geojson}, locations='${4:locations}', color='${5:color}', featureidkey='${6:featurekeyid}', map_style='${7|basic,carto-darkmatter,carto-darkmatter-nolabels,carto-positron,carto-positron-nolabels,carto-voyager,carto-voyager-nolabels,dark,light,open-street-map,outdoors,satellite,satellite-streets,streets,white-bg|}')",
+            "$1.show()",
+            "$0"
+        ]
+    },
+    "density_contour": {
+        "prefix": "px-fig-density_contour",
+        "description": "Insert plotly.express density_contour figure",
+        "body": [
+            "${1:fig} = px.density_contour(data_frame=${2:$TM_SELECTED_TEXT}, x='${3:x}', y='${4:y}', color='${5:color}', nbinsx=${6:50}, nbinsy=${7:50}, trendline='${8|ols,lowess,rolling,expanding,ewm|}')",
+            "$1.show()",
+            "$0"
+        ]
+    },
+    "density_heatmap": {
+        "prefix": "px-fig-density_heatmap",
+        "description": "Insert plotly.express density_heatmap figure",
+        "body": [
+            "${1:fig} = px.density_heatmap(data_frame=${2:$TM_SELECTED_TEXT}, x='${3:x}', y='${4:y}', nbinsx=${5:50}, nbinsy=${6:50})",
+            "$1.show()",
+            "$0"
+        ]
+    },
+    "density_mapbox": {
+        "prefix": "px-fig-density_mapbox",
+        "description": "Insert plotly.express density_mapbox figure",
+        "body": [
+            "${1:fig} = px.density_mapbox(data_frame=${2:$TM_SELECTED_TEXT}, lat='${3:lat}', lon='${4:lon}', radius=${5:5}, mapbox_style='${6|basic,streets,outdoors,light,dark,satellite,satellite-streets,open-street-map,white-bg,carto-positron,carto-darkmatter,stamen-terrain,stamen-toner,stamen_watercolor|}')",
+            "$1.show()",
+            "$0"
+        ]
+    },
+    "density_map": {
+        "prefix": "px-fig-density_map",
+        "description": "Insert plotly.express density_map figure",
+        "body": [
+            "${1:fig} = px.density_map(data_frame=${2:$TM_SELECTED_TEXT}, lat='${3:lat}', lon='${4:lon}', radius=${5:5}, map_style='${6|basic,carto-darkmatter,carto-darkmatter-nolabels,carto-positron,carto-positron-nolabels,carto-voyager,carto-voyager-nolabels,dark,light,open-street-map,outdoors,satellite,satellite-streets,streets,white-bg|}')",
+            "$1.show()",
+            "$0"
+        ]
+    },
+    "imshow": {
+        "prefix": "px-fig-imshow",
+        "description": "Insert plotly.express imshow figure",
+        "body": [
+            "${1:fig} = px.imshow(img=${2:$TM_SELECTED_TEXT}, aspect='${3|auto,equal|}', zmin=${4:-1}, zmax=${5:+1}, color_continuous_scale='${6|aggrnyl,aggrnyl_r,agsunset,agsunset_r,blackbody,blackbody_r,bluered,bluered_r,blues,blues_r,blugrn,blugrn_r,bluyl,bluyl_r,brwnyl,brwnyl_r,bugn,bugn_r,bupu,bupu_r,burg,burg_r,burgyl,burgyl_r,cividis,cividis_r,darkmint,darkmint_r,electric,electric_r,emrld,emrld_r,gnbu,gnbu_r,greens,greens_r,greys,greys_r,hot,hot_r,inferno,inferno_r,jet,jet_r,magenta,magenta_r,magma,magma_r,mint,mint_r,orrd,orrd_r,oranges,oranges_r,oryel,oryel_r,peach,peach_r,pinkyl,pinkyl_r,plasma,plasma_r,plotly3,plotly3_r,pubu,pubu_r,pubugn,pubugn_r,purd,purd_r,purp,purp_r,purples,purples_r,purpor,purpor_r,rainbow,rainbow_r,rdbu,rdbu_r,rdpu,rdpu_r,redor,redor_r,reds,reds_r,sunset,sunset_r,sunsetdark,sunsetdark_r,teal,teal_r,tealgrn,tealgrn_r,turbo,turbo_r,viridis,viridis_r,ylgn,ylgn_r,ylgnbu,ylgnbu_r,ylorbr,ylorbr_r,ylorrd,ylorrd_r,algae,algae_r,amp,amp_r,deep,deep_r,dense,dense_r,gray,gray_r,haline,haline_r,ice,ice_r,matter,matter_r,solar,solar_r,speed,speed_r,tempo,tempo_r,thermal,thermal_r,turbid,turbid_r,armyrose,armyrose_r,brbg,brbg_r,earth,earth_r,fall,fall_r,geyser,geyser_r,prgn,prgn_r,piyg,piyg_r,picnic,picnic_r,portland,portland_r,puor,puor_r,rdgy,rdgy_r,rdylbu,rdylbu_r,rdylgn,rdylgn_r,spectral,spectral_r,tealrose,tealrose_r,temps,temps_r,tropic,tropic_r,balance,balance_r,curl,curl_r,delta,delta_r,oxy,oxy_r,edge,edge_r,hsv,hsv_r,icefire,icefire_r,phase,phase_r,twilight,twilight_r,mrybm,mrybm_r,mygbm,mygbm_r|}')",
+            "$1.update_traces(",
+            "\tzsmooth='best',",
+            "\thovertemplate='x: %{x}<br>y: %{y}<br>z: %{z:.3f}<extra></extra>'",
+            ")",
+            "$1.show()",
+            "$0"
+        ]
+    }
+}

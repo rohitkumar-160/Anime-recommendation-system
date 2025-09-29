@@ -1,0 +1,140 @@
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Analytic Signal Limited. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+ {
+    //
+    // plotly.express argument choices:
+    //
+    "template": {
+        "prefix": "px-args-template",
+        "description": "Choose figure template from list of options",
+        "body": [
+            "template='${1|plotly,plotly_white,plotly_dark,ggplot2,seaborn,simple_white,presentation,xgridoff,ygridoff,gridon,none|}'$0",
+        ]
+    },
+    "renderer": {
+        "prefix": "px-args-renderer",
+        "description": "Choose figure renderer from list of options",
+        "body": [
+            "renderer='${1|vscode,notebook,browser,plotly_mimetype,jupyterlab,nteract,notebook_connected,kaggle,azure,colab,cocalc,databricks,json,png,jpeg,jpg,svg,pdf,firefox,chrome,chromium,iframe,iframe_connected,sphinx_gallery,sphinx_gallery_png|}'$0",
+        ]
+    },
+    "symbol": {
+        "prefix": "px-args-marker_symbol",
+        "description": "Choose marker symbol from list of options",
+        "body": [
+            "marker_symbol='${1|circle,square,diamond,cross,x,triangle-up,triangle-down,triangle,triangle-left,triangle-right,triangle-ne,triangle-se,triangle-sw,triangle-nw,pentagon,hexagon,hexgon2,octagon,star,hexagram,star-triangle-up,star-triangle-down,star-square,star-diamond,diamond-tall,diamond-wide,hourglass,bowtie,circle-cross,circle-x,diamond-cross,diamond-x,cross-thin,x-thin,asterisk,hash,y-up,y-down,y-left,y-right,line-ew,line-ns,line-ne,line-nw,arrow-up,arrow-down,arrow-left,arrow-right,arrow-bar-up,arrow-bar-down,arrow-bar-left,arrow-bar-right,arrow,arrow-wide|}${2|-open,-dot,-open-dot|}'"
+        ]
+    },
+    "color": {
+        "prefix": "px-args-marker_color",
+        "description": "Choose marker color from list of named CSS options",
+        "body": [
+            "marker_color='${1|aliceblue,antiquewhite,aqua,aquamarine,azure,beige,bisque,black,blanchedalmond,blue,blueviolet,brown,burlywood,cadetblue,chartreuse,chocolate,coral,cornflowerblue,cornsilk,crimson,cyan,darkblue,darkcyan,darkgoldenrod,darkgray,darkgrey,darkgreen,darkkhaki,darkmagenta,darkolivegreen,darkorange,darkorchid,darkred,darksalmon,darkseagreen,darkslateblue,darkslategray,darkslategrey,darkturquoise,darkviolet,deeppink,deepskyblue,dimgray,dimgrey,dodgerblue,firebrick,floralwhite,forestgreen,fuchsia,gainsboro,ghostwhite,gold,goldenrod,gray,grey,green,greenyellow,honeydew,hotpink,indianred,indigo,ivory,khaki,lavender,lavenderblush,lawngreen,lemonchiffon,lightblue,lightcoral,lightcyan,lightgoldenrodyellow,lightgray,lightgrey,lightgreen,lightpink,lightsalmon,lightseagreen,lightskyblue,lightslategray,lightslategrey,lightsteelblue,lightyellow,lime,limegreen,linen,magenta,maroon,mediumaquamarine,mediumblue,mediumorchid,mediumpurple,mediumseagreen,mediumslateblue,mediumspringgreen,mediumturquoise,mediumvioletred,midnightblue,mintcream,mistyrose,moccasin,navajowhite,navy,oldlace,olive,olivedrab,orange,orangered,orchid,palegoldenrod,palegreen,paleturquoise,palevioletred,papayawhip,peachpuff,peru,pink,plum,powderblue,purple,red,rosybrown,royalblue,rebeccapurple,saddlebrown,salmon,sandybrown,seagreen,seashell,sienna,silver,skyblue,slateblue,slategray,slategrey,snow,springgreen,steelblue,tan,teal,thistle,tomato,turquoise,violet,wheat,white,whitesmoke,yellow,yellowgreen|}'"
+        ]
+    },
+    "color scale": {
+        "prefix": "px-args-color_continuous_scale",
+        "description": "Choose color scale from list of named Plotly options",
+        "body": [
+            "color_continuous_scale='${1|aggrnyl,aggrnyl_r,agsunset,agsunset_r,blackbody,blackbody_r,bluered,bluered_r,blues,blues_r,blugrn,blugrn_r,bluyl,bluyl_r,brwnyl,brwnyl_r,bugn,bugn_r,bupu,bupu_r,burg,burg_r,burgyl,burgyl_r,cividis,cividis_r,darkmint,darkmint_r,electric,electric_r,emrld,emrld_r,gnbu,gnbu_r,greens,greens_r,greys,greys_r,hot,hot_r,inferno,inferno_r,jet,jet_r,magenta,magenta_r,magma,magma_r,mint,mint_r,orrd,orrd_r,oranges,oranges_r,oryel,oryel_r,peach,peach_r,pinkyl,pinkyl_r,plasma,plasma_r,plotly3,plotly3_r,pubu,pubu_r,pubugn,pubugn_r,purd,purd_r,purp,purp_r,purples,purples_r,purpor,purpor_r,rainbow,rainbow_r,rdbu,rdbu_r,rdpu,rdpu_r,redor,redor_r,reds,reds_r,sunset,sunset_r,sunsetdark,sunsetdark_r,teal,teal_r,tealgrn,tealgrn_r,turbo,turbo_r,viridis,viridis_r,ylgn,ylgn_r,ylgnbu,ylgnbu_r,ylorbr,ylorbr_r,ylorrd,ylorrd_r,algae,algae_r,amp,amp_r,deep,deep_r,dense,dense_r,gray,gray_r,haline,haline_r,ice,ice_r,matter,matter_r,solar,solar_r,speed,speed_r,tempo,tempo_r,thermal,thermal_r,turbid,turbid_r,armyrose,armyrose_r,brbg,brbg_r,earth,earth_r,fall,fall_r,geyser,geyser_r,prgn,prgn_r,piyg,piyg_r,picnic,picnic_r,portland,portland_r,puor,puor_r,rdgy,rdgy_r,rdylbu,rdylbu_r,rdylgn,rdylgn_r,spectral,spectral_r,tealrose,tealrose_r,temps,temps_r,tropic,tropic_r,balance,balance_r,curl,curl_r,delta,delta_r,oxy,oxy_r,edge,edge_r,hsv,hsv_r,icefire,icefire_r,phase,phase_r,twilight,twilight_r,mrybm,mrybm_r,mygbm,mygbm_r|}'"
+        ]
+    },
+    "trendline": {
+        "prefix": "px-args-trendline",
+        "description": "Choose a trendline (regression) function from list of options",
+        "body": [
+            "trendline='${1|ols,lowess,rolling,expanding,ewm|}'"
+        ]
+    },
+    "trendline color": {
+        "prefix": "px-args-trendline_color_override",
+        "description": "Choose a trendline color from list of named CSS options",
+        "body": [
+            "trendline_color_override='${1|aliceblue,antiquewhite,aqua,aquamarine,azure,beige,bisque,black,blanchedalmond,blue,blueviolet,brown,burlywood,cadetblue,chartreuse,chocolate,coral,cornflowerblue,cornsilk,crimson,cyan,darkblue,darkcyan,darkgoldenrod,darkgray,darkgrey,darkgreen,darkkhaki,darkmagenta,darkolivegreen,darkorange,darkorchid,darkred,darksalmon,darkseagreen,darkslateblue,darkslategray,darkslategrey,darkturquoise,darkviolet,deeppink,deepskyblue,dimgray,dimgrey,dodgerblue,firebrick,floralwhite,forestgreen,fuchsia,gainsboro,ghostwhite,gold,goldenrod,gray,grey,green,greenyellow,honeydew,hotpink,indianred,indigo,ivory,khaki,lavender,lavenderblush,lawngreen,lemonchiffon,lightblue,lightcoral,lightcyan,lightgoldenrodyellow,lightgray,lightgrey,lightgreen,lightpink,lightsalmon,lightseagreen,lightskyblue,lightslategray,lightslategrey,lightsteelblue,lightyellow,lime,limegreen,linen,magenta,maroon,mediumaquamarine,mediumblue,mediumorchid,mediumpurple,mediumseagreen,mediumslateblue,mediumspringgreen,mediumturquoise,mediumvioletred,midnightblue,mintcream,mistyrose,moccasin,navajowhite,navy,oldlace,olive,olivedrab,orange,orangered,orchid,palegoldenrod,palegreen,paleturquoise,palevioletred,papayawhip,peachpuff,peru,pink,plum,powderblue,purple,red,rosybrown,royalblue,rebeccapurple,saddlebrown,salmon,sandybrown,seagreen,seashell,sienna,silver,skyblue,slateblue,slategray,slategrey,snow,springgreen,steelblue,tan,teal,thistle,tomato,turquoise,violet,wheat,white,whitesmoke,yellow,yellowgreen|}'"
+        ]
+    },
+    "trendline lowess options": {
+        "prefix": "px-args-trendline_options-lowess",
+        "description": "Choose options for fitting a lowess trendline (regression) function",
+        "body": [
+            "trendline_options=dict(frac=${1:2/3})"
+        ]
+    },
+    "trendline ols options": {
+        "prefix": "px-args-trendline_options-ols",
+        "description": "Choose options for fitting an ols trendline (regression) function",
+        "body": [
+            "trendline_options=dict(add_constant=${1|True,False|},log_x=${2|False,True|},log_y=${3|False,True|})"
+        ]
+    },
+    "trendline scope": {
+        "prefix": "px-args-trendline_scope",
+        "description": "Choose a trendline (regression) function scope from list of options",
+        "body": [
+            "trendline_scope='${1|trace,overall|}'"
+        ]
+    },
+    "marginal": {
+        "prefix": "px-args-marginal",
+        "description": "Choose marginal distribution style from list of options",
+        "body": [
+            "marginal='${1|rug,box,violin,histogram|}'"
+        ]
+    },
+    "marginal_x": {
+        "prefix": "px-args-marginal_x",
+        "description": "Choose x-axis marginal distribution style from list of options",
+        "body": [
+            "marginal_x='${1|rug,box,violin,histogram|}'"
+        ]
+    },
+    "marginal_y": {
+        "prefix": "px-args-marginal_y",
+        "description": "Choose y-axis marginal distribution style from list of options",
+        "body": [
+            "marginal_y='${1|rug,box,violin,histogram|}'"
+        ]
+    },
+    "scrollzoom": {
+        "prefix": "px-args-scrollzoom",
+        "description": "Configure zooming on mouse scrolling",
+        "body": [
+            "config={'scrollZoom': ${1|True,False|}}"
+        ]
+    },
+    "mapbox_style": {
+        "prefix": "px-args-mapbox_style",
+        "description": "Choose mapbox style from list of options",
+        "body": [
+            "mapbox_style='${1|basic,streets,outdoors,light,dark,satellite,satellite-streets,open-street-map,white-bg,carto-positron,carto-darkmatter,stamen-terrain,stamen-toner,stamen_watercolor|}'"
+        ]
+    },
+    "map_style": {
+        "prefix": "px-args-map_style",
+        "description": "Choose map style from list of options",
+        "body": [
+            "map_style='${1|basic,carto-darkmatter,carto-darkmatter-nolabels,carto-positron,carto-positron-nolabels,carto-voyager,carto-voyager-nolabels,dark,light,open-street-map,outdoors,satellite,satellite-streets,streets,white-bg|}'"
+        ]
+    },
+    "projection": {
+        "prefix": "px-args-projection",
+        "description": "Choose geographic map projection from list of options",
+        "body": [
+            "projection='${1|airy,aitoff,albers,albers usa,august,azimuthal equal area,azimuthal equidistant,baker,bertin1953,boggs,bonne,bottomley,bromley,collignon,conic conformal,conic equal area,conic equidistant,craig,craster,cylindrical equal area,cylindrical stereographic,eckert1,eckert2,eckert3,eckert4,eckert5,eckert6,eisenlohr,equal earth,equirectangular,fahey,foucaut,foucaut sinusoidal,ginzburg4,ginzburg5,ginzburg6,ginzburg8,ginzburg9,gnomonic,gringorten,gringorten quincuncial,guyou,hammer,hill,homolosine,hufnagel,hyperelliptical,kavrayskiy7,lagrange,larrivee,laskowski,loximuthal,mercator,miller,mollweide,mt flat polar parabolic,mt flat polar quartic,mt flat polar sinusoidal,natural earth,natural earth1,natural earth2,nell hammer,nicolosi,orthographic,patterson,peirce quincuncial,polyconic,rectangular polyconic,robinson,satellite,sinu mollweide,sinusoidal,stereographic,times,transverse mercator,van der grinten,van der grinten2,van der grinten3,van der grinten4,wagner4,wagner6,wiechel,winkel tripel,winkel3|}'"
+        ]
+    },
+    "rangeselector_button": {
+        "prefix": "px-args-rangeselector-button",
+        "description": "Create rangeselector button and choose parameters from lists of options.",
+        "body": [
+            "dict(",
+            "\tcount=${2:1},",
+            "\tstep=\"${3|month,year,day,hour,minute,second,all|}\",",
+            "\tlabel=\"${2} $3\",",
+            "\tstepmode=\"${4|backward,todate|}\",",
+            "),"
+        ]
+    }
+}

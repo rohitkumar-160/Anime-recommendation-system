@@ -1,0 +1,60 @@
+{
+	"name": "snippets-plotly",
+	"displayName": "Plotly Express Snippets",
+	"description": "Python code snippets for creating statistical and scientific graphics using Plotly Express.",
+	"icon": "images/icon.png",
+	"publisher": "analytic-signal",
+	"license": "MIT",
+	"version": "2.1.1",
+	"engines": {
+		"vscode": "^1.63.0"
+	},
+	"capabilities": {
+		"untrustedWorkspaces": {
+			"supported": true
+		}
+	},
+	"categories": [
+		"Snippets",
+		"Data Science",
+		"Visualization",
+		"Other"
+	],
+	"keywords": [
+		"plotly",
+		"plotly express",
+		"python",
+		"data science",
+		"statistical graphics",
+		"scientific visualization"
+	],
+	"contributes": {
+		"snippets": [
+			{
+				"language": "python",
+				"path": "./snippets/plotly-express-setup.code-snippets"
+			},
+			{
+				"language": "python",
+				"path": "./snippets/plotly-express-read.code-snippets"
+			},
+			{
+				"language": "python",
+				"path": "./snippets/plotly-express-fig.code-snippets"
+			},
+			{
+				"language": "python",
+				"path": "./snippets/plotly-express-update.code-snippets"
+			},
+			{
+				"language": "python",
+				"path": "./snippets/plotly-express-args.code-snippets"
+			}
+		]
+	},
+	"__metadata": {
+		"installedTimestamp": 1750311169891,
+		"targetPlatform": "undefined",
+		"size": 5146571
+	}
+}

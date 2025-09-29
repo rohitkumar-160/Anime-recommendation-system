@@ -1,0 +1,139 @@
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Analytic Signal Limited. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+ {
+    //
+    // plotly.express figure update:
+    //
+    "marker": {
+        "prefix": "px-update-marker",
+        "description": "Update trace marker symbol, color and size",
+        "body": [
+            "${1:$TM_SELECTED_TEXT}.update_traces(",
+            "\tmarker_color='${2|aliceblue,antiquewhite,aqua,aquamarine,azure,beige,bisque,black,blanchedalmond,blue,blueviolet,brown,burlywood,cadetblue,chartreuse,chocolate,coral,cornflowerblue,cornsilk,crimson,cyan,darkblue,darkcyan,darkgoldenrod,darkgray,darkgrey,darkgreen,darkkhaki,darkmagenta,darkolivegreen,darkorange,darkorchid,darkred,darksalmon,darkseagreen,darkslateblue,darkslategray,darkslategrey,darkturquoise,darkviolet,deeppink,deepskyblue,dimgray,dimgrey,dodgerblue,firebrick,floralwhite,forestgreen,fuchsia,gainsboro,ghostwhite,gold,goldenrod,gray,grey,green,greenyellow,honeydew,hotpink,indianred,indigo,ivory,khaki,lavender,lavenderblush,lawngreen,lemonchiffon,lightblue,lightcoral,lightcyan,lightgoldenrodyellow,lightgray,lightgrey,lightgreen,lightpink,lightsalmon,lightseagreen,lightskyblue,lightslategray,lightslategrey,lightsteelblue,lightyellow,lime,limegreen,linen,magenta,maroon,mediumaquamarine,mediumblue,mediumorchid,mediumpurple,mediumseagreen,mediumslateblue,mediumspringgreen,mediumturquoise,mediumvioletred,midnightblue,mintcream,mistyrose,moccasin,navajowhite,navy,oldlace,olive,olivedrab,orange,orangered,orchid,palegoldenrod,palegreen,paleturquoise,palevioletred,papayawhip,peachpuff,peru,pink,plum,powderblue,purple,red,rosybrown,royalblue,rebeccapurple,saddlebrown,salmon,sandybrown,seagreen,seashell,sienna,silver,skyblue,slateblue,slategray,slategrey,snow,springgreen,steelblue,tan,teal,thistle,tomato,turquoise,violet,wheat,white,whitesmoke,yellow,yellowgreen|}',",
+            "\tmarker_opacity=${3:1},",
+            "\tmarker_symbol='${4|circle,square,diamond,cross,x,triangle-up,triangle-down,triangle,triangle-left,triangle-right,triangle-ne,triangle-se,triangle-sw,triangle-nw,pentagon,hexagon,hexgon2,octagon,star,hexagram,star-triangle-up,star-triangle-down,star-square,star-diamond,diamond-tall,diamond-wide,hourglass,bowtie,circle-cross,circle-x,diamond-cross,diamond-x,cross-thin,x-thin,asterisk,hash,y-up,y-down,y-left,y-right,line-ew,line-ns,line-ne,line-nw,arrow-up,arrow-down,arrow-left,arrow-right,arrow-bar-up,arrow-bar-down,arrow-bar-left,arrow-bar-right,arrow,arrow-wide|}${5|-open,-dot,-open-dot|}',",
+            "\tmarker_size=${6:5}",
+            ")",
+            "$0"
+        ]
+    },
+    "text": {
+        "prefix": "px-update-text",
+        "description": "Update text position, font color, and font size",
+        "body": [
+            "${1:$TM_SELECTED_TEXT}.update_traces(",
+            "\ttextposition='${2|top left,top center,top right,middle left,middle center,middle right,bottom left,bottom center,bottom right|}',",
+            "\ttextfont_color='${3|aliceblue,antiquewhite,aqua,aquamarine,azure,beige,bisque,black,blanchedalmond,blue,blueviolet,brown,burlywood,cadetblue,chartreuse,chocolate,coral,cornflowerblue,cornsilk,crimson,cyan,darkblue,darkcyan,darkgoldenrod,darkgray,darkgrey,darkgreen,darkkhaki,darkmagenta,darkolivegreen,darkorange,darkorchid,darkred,darksalmon,darkseagreen,darkslateblue,darkslategray,darkslategrey,darkturquoise,darkviolet,deeppink,deepskyblue,dimgray,dimgrey,dodgerblue,firebrick,floralwhite,forestgreen,fuchsia,gainsboro,ghostwhite,gold,goldenrod,gray,grey,green,greenyellow,honeydew,hotpink,indianred,indigo,ivory,khaki,lavender,lavenderblush,lawngreen,lemonchiffon,lightblue,lightcoral,lightcyan,lightgoldenrodyellow,lightgray,lightgrey,lightgreen,lightpink,lightsalmon,lightseagreen,lightskyblue,lightslategray,lightslategrey,lightsteelblue,lightyellow,lime,limegreen,linen,magenta,maroon,mediumaquamarine,mediumblue,mediumorchid,mediumpurple,mediumseagreen,mediumslateblue,mediumspringgreen,mediumturquoise,mediumvioletred,midnightblue,mintcream,mistyrose,moccasin,navajowhite,navy,oldlace,olive,olivedrab,orange,orangered,orchid,palegoldenrod,palegreen,paleturquoise,palevioletred,papayawhip,peachpuff,peru,pink,plum,powderblue,purple,red,rosybrown,royalblue,rebeccapurple,saddlebrown,salmon,sandybrown,seagreen,seashell,sienna,silver,skyblue,slateblue,slategray,slategrey,snow,springgreen,steelblue,tan,teal,thistle,tomato,turquoise,violet,wheat,white,whitesmoke,yellow,yellowgreen|}',",
+            "\ttextfont_size=${4:11}",
+            ")",
+            "$0"
+        ]
+    },
+    "margin": {
+        "prefix": "px-update-margin",
+        "description": "Update layout margins",
+        "body": [
+            "${1:$TM_SELECTED_TEXT}.update_layout(",
+            "\tmargin={",
+            "\t\t't':${2:30},",
+            "\t\t'b':${3:10},",
+            "\t\t'l':${4:10},",
+            "\t\t'r':${5:10}",
+            "\t}",
+            ")",
+            "$0"
+        ]
+    },
+    "rangeslider": {
+        "prefix": "px-update-rangeslider",
+        "description": "Add a rangeslider to the x-axis layout",
+        "body": [
+            "${1:$TM_SELECTED_TEXT}.update_layout(",
+            "\txaxis_rangeslider_visible=${2|True,False|},",
+            "\tyaxis_fixedrange=${3|False,True|}",
+            ")",
+            "$0"
+        ]
+    },
+	"rangeselector": {
+        "prefix": "px-update-rangeselector",
+        "description": "Add rangeselector buttons to the x-axis layout",
+        "body": [
+            "${1:$TM_SELECTED_TEXT}.update_layout(",
+            "\txaxis_rangeselector=dict(",
+            "\t\tbuttons=[",
+            "\t\t\tdict(",
+            "\t\t\t\tcount=${2:1},",
+            "\t\t\t\tstep=\"${3|month,year,day,hour,minute,second,all|}\",",
+            "\t\t\t\tlabel=\"${2} $3\",",
+            "\t\t\t\tstepmode=\"${4|backward,todate|}\",",
+            "\t\t\t),",
+            "\t\t\tdict(",
+            "\t\t\t\tstep=\"all\"",
+            "\t\t\t)",
+            "\t\t]",
+            "\t)",
+            ")",
+            "$0"
+        ]
+    },
+    "scaleratio": {
+        "prefix": "px-update-scaleratio",
+        "description": "Fix scale ratio between x and y axes at 1:1",
+        "body": [
+            "${1:$TM_SELECTED_TEXT}.update_layout(",
+            "\tyaxis_scaleanchor='x',",
+            "\tyaxis_scaleratio=${2:1}",
+            ")",
+            "$0"  
+        ]
+    },
+    "autorange": {
+        "prefix": "px-update-autorange",
+        "description": "Axis autorange",
+        "body": [
+            "${1:$TM_SELECTED_TEXT}.update_${2|xaxes,yaxes|}(",
+            "\tautorange=${3|True,False,'reversed'|}",
+            ")",
+            "$0"
+        ]
+    },
+    "scene aspect ratio": {
+        "prefix": "px-update-scene-aspectratio",
+        "description": "Manually fix the aspect ratio between x, y, and z axes in a 3d scene",
+        "body": [
+            "${1:$TM_SELECTED_TEXT}.update_layout(",
+            "\tscene_aspectratio = dict(",
+            "\t\tx=${2:1},", 
+            "\t\ty=${3:1},",
+            "\t\tz=${4:1}", 
+            "\t)",
+            ")",
+            "$0"  
+        ]
+    },
+    "scene aspect mode": {
+        "prefix": "px-update-scene-aspectmode",
+        "description": "Set the aspect mode of a 3d scene",
+        "body": [
+            "${1:$TM_SELECTED_TEXT}.update_layout(",
+            "\tscene_aspectmode='${2|auto,cube,data,manual|}'",
+            ")",
+            "$0"  
+        ]
+    },
+    "scattermatrix parts": {
+        "prefix": "px-update-scattermatrix-parts",
+        "description": "Update visibility of scattermatrix diagonal, lowerhalf, and upperhalf parts",
+        "body": [
+            "${1:$TM_SELECTED_TEXT}.update_traces(",
+            "\tdiagonal_visible=${2|True,False|},",
+            "\tshowlowerhalf=${3|True,False|},",
+            "\tshowupperhalf=${4|True,False|},",
+            ")",
+            "$0"  
+        ]
+    },
+}

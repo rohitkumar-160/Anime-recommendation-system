@@ -1,0 +1,63 @@
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Analytic Signal Limited. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+ {
+    "csv": {
+        "prefix": "px-read-csv",
+        "description": "Read (.csv) file into pandas data frame and report info",
+        "body": [
+            "${1:df} = pd.read_csv('${2:file.csv}')",
+            "$1.info()",
+            "$0"
+        ]
+    },
+    "excel": {
+        "prefix": "px-read-excel",
+        "description": "Read (.xlsx) file into pandas data frame and report info",
+        "body": [
+            "${1:df} = pd.read_excel('${2:file.xlsx}')",
+            "$1.info()",
+            "$0"
+        ]
+    },
+    "feather": {
+        "prefix": "px-read-feather",
+        "description": "Read (.feather) file into pandas data frame and report info",
+        "body": [
+            "${1:df} = pd.read_feather('${2:file.feather}')",
+            "$1.info()",
+            "$0"
+        ]
+    },
+    "geojson": {
+        "prefix": "px-read-geojson",
+        "description": "Read (.geojson) file into dictionary and print contents",
+        "body": [
+            "import json",
+            "with open(file='${1:file.geojson}') as f:",
+            "   ${2:geojson} = json.load(f)",
+            "   print(json.dumps($2,indent=4))",
+            "$0"
+        ]
+    },
+    "parquet": {
+        "prefix": "px-read-parquet",
+        "description": "Read (.parquet) file into pandas data frame and report info",
+        "body": [
+            "${1:df} = pd.read_parquet('${2:file.parquet}')",
+            "$1.info()",
+            "$0"
+        ]
+    },
+    "plotly": {
+        "prefix": "px-read-plotly",
+        "description": "Create and show a Plotly figure from a definition stored in a JSON (`.json`) file",
+        "body": [
+            "import plotly.io as pio\n",
+            "${1:fig} = pio.read_json(file='${2:file.json}')",
+            "$1.show()",
+            "$0"
+        ]
+    }
+}

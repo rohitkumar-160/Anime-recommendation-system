@@ -1,0 +1,33 @@
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Analytic Signal Limited. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+ {
+    //
+    // plotly.express setup:
+    //
+    "setup plotly.express": {
+        "prefix": "px-setup",
+        "description": "Import pandas, plotly.express and plotly.io modules and set default figure renderer and template",
+        "body": [
+            "import pandas as pd",
+            "import plotly.express as px",
+            "import plotly.io as pio",
+            "",
+            "pio.renderers.default = '${1|vscode,notebook,browser,plotly_mimetype,jupyterlab,nteract,notebook_connected,kaggle,azure,colab,cocalc,databricks,json,png,jpeg,jpg,svg,pdf,firefox,chrome,chromium,iframe,iframe_connected,sphinx_gallery,sphinx_gallery_png|}'",
+            "pio.templates.default = '${2|plotly,plotly_white,plotly_dark,ggplot2,seaborn,simple_white,presentation,xgridoff,ygridoff,gridon,none|}'",
+            "$0"
+        ]
+    },
+    "setup mapbox token": {
+        "prefix": "px-setup-mapbox_token",
+        "description": "Read mapbox access token from file and register token with plotly.express",
+        "body": [
+            "mapbox_access_token = None",
+            "with open(file='${1:mapbox-access-token.txt}') as f:",
+            "\tmapbox_access_token = f.read()",
+            "\tpx.set_mapbox_access_token(token=mapbox_access_token)",
+            "$0"
+        ]
+    }
+}

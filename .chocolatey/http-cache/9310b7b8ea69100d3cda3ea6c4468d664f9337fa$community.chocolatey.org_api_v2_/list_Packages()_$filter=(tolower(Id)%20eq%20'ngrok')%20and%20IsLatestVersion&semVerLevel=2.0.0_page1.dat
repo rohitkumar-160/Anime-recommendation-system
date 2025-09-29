@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<feed xml:base="http://community.chocolatey.org/api/v2/" xmlns:d="http://schemas.microsoft.com/ado/2007/08/dataservices" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns="http://www.w3.org/2005/Atom">
+  <title type="text">Packages</title>
+  <id>http://community.chocolatey.org/api/v2/Packages</id>
+  <updated>2025-01-08T08:29:44Z</updated>
+  <link rel="self" title="Packages" href="Packages" />
+  <entry>
+    <id>http://community.chocolatey.org/api/v2/Packages(Id='ngrok',Version='3.19.0')</id>
+    <title type="text">ngrok</title>
+    <summary type="text">ngrok secure introspectable tunnels to localhost.</summary>
+    <updated>2024-12-24T19:04:20Z</updated>
+    <author>
+      <name>ngrok</name>
+    </author>
+    <link rel="edit-media" title="V2FeedPackage" href="Packages(Id='ngrok',Version='3.19.0')/$value" />
+    <link rel="edit" title="V2FeedPackage" href="Packages(Id='ngrok',Version='3.19.0')" />
+    <category term="CCR.Website.V2FeedPackage" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
+    <content type="application/zip" src="https://community.chocolatey.org/api/v2/package/ngrok/3.19.0" />
+    <m:properties xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:d="http://schemas.microsoft.com/ado/2007/08/dataservices">
+      <d:Version>3.19.0</d:Version>
+      <d:Title>Ngrok Agent</d:Title>
+      <d:Description>ngrok is a secure ingress platform that enables developers to add global server load balancing, reverse proxy, firewall, API gateway and Kubernetes Ingress to applications and APIs. If your antivirus flags ngrok as a virus, malware or Potentially Unwanted Program (PUA), please view the following page in our docs: https://ngrok.com/docs/faq/#why-is-my-antivirus-software-reporting-the-ngrok-agent-as-a-virus--malware--or-potentially-unwanted-application-pau</d:Description>
+      <d:Tags>ngrok</d:Tags>
+      <d:Copyright>2024 ngrok</d:Copyright>
+      <d:Created m:type="Edm.DateTime">2024-12-20T01:05:29.587</d:Created>
+      <d:Dependencies></d:Dependencies>
+      <d:DownloadCount m:type="Edm.Int32">418209</d:DownloadCount>
+      <d:VersionDownloadCount m:type="Edm.Int32">16</d:VersionDownloadCount>
+      <d:GalleryDetailsUrl>https://community.chocolatey.org/packages/ngrok/3.19.0</d:GalleryDetailsUrl>
+      <d:ReportAbuseUrl>https://community.chocolatey.org/package/ReportAbuse/ngrok/3.19.0</d:ReportAbuseUrl>
+      <d:IconUrl>https://avatars.githubusercontent.com/u/10625446</d:IconUrl>
+      <d:IsLatestVersion m:type="Edm.Boolean">true</d:IsLatestVersion>
+      <d:IsAbsoluteLatestVersion m:type="Edm.Boolean">true</d:IsAbsoluteLatestVersion>
+      <d:IsPrerelease m:type="Edm.Boolean">false</d:IsPrerelease>
+      <d:Language></d:Language>
+      <d:Published m:type="Edm.DateTime">2024-12-20T01:05:29.587</d:Published>
+      <d:LicenseUrl></d:LicenseUrl>
+      <d:RequireLicenseAcceptance m:type="Edm.Boolean">false</d:RequireLicenseAcceptance>
+      <d:PackageHash>kTZy+cL8p0Kjly/56x+DBLPN9q/P0nxrS7m06LtRoJoaHrANkItrYGZdMBG7YZvjMcdEJ4OTL9fVNBXL3KNdeQ==</d:PackageHash>
+      <d:PackageHashAlgorithm>SHA512</d:PackageHashAlgorithm>
+      <d:PackageSize m:type="Edm.Int64">3402</d:PackageSize>
+      <d:ProjectUrl>https://ngrok.com/</d:ProjectUrl>
+      <d:ReleaseNotes></d:ReleaseNotes>
+      <d:ProjectSourceUrl></d:ProjectSourceUrl>
+      <d:PackageSourceUrl>https://github.com/ngrok/choco-ngrok</d:PackageSourceUrl>
+      <d:DocsUrl>https://ngrok.com/docs</d:DocsUrl>
+      <d:MailingListUrl></d:MailingListUrl>
+      <d:BugTrackerUrl>https://github.com/ngrok/choco-ngrok</d:BugTrackerUrl>
+      <d:IsApproved m:type="Edm.Boolean">true</d:IsApproved>
+      <d:PackageStatus>Approved</d:PackageStatus>
+      <d:PackageSubmittedStatus>Ready</d:PackageSubmittedStatus>
+      <d:PackageTestResultUrl>https://gist.github.com/choco-bot/280f49e6320cf926dd73892cb0e36ffb</d:PackageTestResultUrl>
+      <d:PackageTestResultStatus>Passing</d:PackageTestResultStatus>
+      <d:PackageTestResultStatusDate m:type="Edm.DateTime">2024-12-20T03:47:52.373</d:PackageTestResultStatusDate>
+      <d:PackageValidationResultStatus>Passing</d:PackageValidationResultStatus>
+      <d:PackageValidationResultDate m:type="Edm.DateTime">2024-12-20T01:41:36.413</d:PackageValidationResultDate>
+      <d:PackageCleanupResultDate m:type="Edm.DateTime" m:null="true"></d:PackageCleanupResultDate>
+      <d:PackageReviewedDate m:type="Edm.DateTime">2024-12-24T17:52:05.337</d:PackageReviewedDate>
+      <d:PackageApprovedDate m:type="Edm.DateTime">2024-12-24T17:52:05.337</d:PackageApprovedDate>
+      <d:PackageReviewer>TheCakeIsNaOH</d:PackageReviewer>
+      <d:IsDownloadCacheAvailable m:type="Edm.Boolean">true</d:IsDownloadCacheAvailable>
+      <d:DownloadCacheStatus>Available</d:DownloadCacheStatus>
+      <d:DownloadCacheDate m:type="Edm.DateTime">2024-12-24T19:05:03.403</d:DownloadCacheDate>
+      <d:DownloadCache>https://bin.equinox.io/a/bjtcPNfaiTB/ngrok-v3-3.19.0-windows-amd64.zip^x64/ngrok-v3-3.19.0-windows-amd64.zip^628F0DF6B800F195BE4FDD6706038AAE44337908D447B55E4FED3F6A76D056D9935A584DB24DD1E0763F7647166C66AB6999A44C18FC491A8B92ED8D3B59FA20|https://bin.equinox.io/a/42dfdEgJxGo/ngrok-v3-3.19.0-windows-386.zip^x86/ngrok-v3-3.19.0-windows-386.zip^8AF8EB588E8FE5A98B2F9028E05469E966BF6EB7EEB49443BE218928CAAA6D1AC1D735C1546E74C1281F48E8623AEFC40FDB802C2F152A1213A3DB2DC3A8A64D</d:DownloadCache>
+      <d:PackageScanStatus>Exempted</d:PackageScanStatus>
+      <d:PackageScanResultDate m:type="Edm.DateTime">2024-12-24T17:52:05.307</d:PackageScanResultDate>
+      <d:PackageScanFlagResult>Warning</d:PackageScanFlagResult>
+    </m:properties>
+  </entry>
+  <link rel="next" href="http://community.chocolatey.org/api/v2/Packages?$filter=(tolower(Id)%20eq%20'ngrok')%20and%20IsLatestVersion&amp;$skiptoken='8449.117','ngrok'" />
+</feed>
